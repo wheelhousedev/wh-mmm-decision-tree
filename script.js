@@ -1,0 +1,141 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const surveyForm = document.getElementById('survey-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const resultDiv = document.getElementById('result');
+
+    const questions = [
+        {
+            group: "Client Goals & Objectives",
+            questions: [
+                {
+                    text: "What is the client's primary business objective?",
+                    goodFit: "The client wants to understand the ROI of their marketing channels, optimize budget allocation, identify diminishing returns, and forecast the impact of future marketing investments.",
+                    poorFit: "The client wants to know which specific ad creative is performing best, understand real-time campaign performance, or attribute individual conversions to specific touchpoints."
+                },
+                {
+                    text: "What is the primary purpose of the measurement?",
+                    goodFit: "The client needs to justify marketing spend to leadership and is looking for ways to optimize for better performance.",
+                    poorFit: "The client primarily needs to report on marketing activities and basic performance metrics."
+                },
+                {
+                    text: "What is the client's planning horizon?",
+                    goodFit: "The client is focused on annual or multi-year strategic planning and wants to understand the sustainable drivers of growth.",
+                    poorFit: "The client needs to make rapid, in-flight adjustments to campaigns on a daily or weekly basis."
+                },
+                {
+                    text: "Is the client interested in understanding cross-channel effects?",
+                    goodFit: "The client wants to understand how different marketing channels interact with each other (e.g., how TV ads impact search queries).",
+                    poorFit: "The client is only interested in the performance of individual channels in isolation."
+                }
+            ]
+        },
+        {
+            group: "Data & Analytics Readiness",
+            questions: [
+                {
+                    text: "How much historical data can the client provide?",
+                    goodFit: "The client can provide at least 2 years of continuous weekly data for all significant marketing channels and conversion metrics.",
+                    poorFit: "The client has less than 2 years of data, the data is not granular (e.g., monthly instead of weekly), or there are significant gaps."
+                },
+                {
+                    text: "How many distinct marketing channels are being used?",
+                    goodFit: "The client has a diverse marketing mix with several channels (e.g., TV, Radio, Social Media, Search) that have variable spending patterns.",
+                    poorFit: "The client relies on only one or two marketing channels, or the spending has been constant with little variation."
+                },
+                {
+                    text: "What kind of data can the client provide?",
+                    goodFit: "The client can provide granular data on marketing spend, impressions, clicks, and conversions, along with relevant external factors (e.g., promotions, economic data, competitor activity). The data is clean, consistent, and well-organized.",
+                    poorFit: "The client can only provide high-level data (e.g., total marketing spend), or the data is inconsistent, messy, or missing key variables."
+                },
+                {
+                    text: "Is third-party or external data available?",
+                    goodFit: "The client can provide or is willing to acquire data on external factors like competitor spending, economic indicators, promotions, or major events.",
+                    poorFit: "The client only has access to their own internal marketing and sales data."
+                }
+            ]
+        }
+    ];
+
+    function renderQuestions() {
+        let questionHTML = '';
+        questions.forEach((group, groupIndex) => {
+            questionHTML += `<div class="question-group"><h2>${group.group}</h2>`;
+            group.questions.forEach((q, questionIndex) => {
+                const questionId = `q${groupIndex}_${questionIndex}`;
+                questionHTML += `
+                    <div>
+                        <h3>${q.text}</h3>
+                        <label>
+                            <input type="radio" name="${questionId}" value="1" required>
+                            <strong>Good Fit:</strong> ${q.goodFit}
+                        </label>
+                        <label>
+                            <input type="radio" name="${questionId}" value="0">
+                            <strong>Poor Fit:</strong> ${q.poorFit}
+                        </label>
+                    </div>
+                `;
+            });
+            questionHTML += `</div>`;
+        });
+        surveyForm.innerHTML = questionHTML;
+    }
+
+    function calculateResults() {
+        const formData = new FormData(surveyForm);
+        let score = 0;
+        let totalQuestions = 0;
+
+        for (let value of formData.values()) {
+            score += parseInt(value, 10);
+            totalQuestions++;
+        }
+        
+        const totalPossibleQuestions = questions.reduce((acc, group) => acc + group.questions.length, 0);
+        if (totalQuestions < totalPossibleQuestions) {
+            alert('Please answer all questions before calculating the fit.');
+            return;
+        }
+
+        const percentage = (score / totalPossibleQuestions) * 100;
+        displayResult(percentage);
+    }
+
+    function displayResult(percentage) {
+        let content = '';
+        resultDiv.className = 'result-container'; // Reset classes
+
+        if (percentage >= 60) {
+            resultDiv.classList.add('result-good');
+            content = `
+                <h2>Conclusion: Strong Candidate for MMM (${percentage.toFixed(0)}% Match)</h2>
+                <p>The client is likely a good fit for an MMM project.</p>
+                <h3>Next Steps:</h3>
+                <ul>
+                    <li>Proceed with a deeper dive into the data requirements for Meridian.</li>
+                    <li>Scope the MMM project, outlining timelines, deliverables, and costs.</li>
+                    <li>Begin the data collection and integration process.</li>
+                </ul>
+            `;
+        } else {
+            resultDiv.classList.add('result-bad');
+            content = `
+                <h2>Conclusion: Not a Good Fit for MMM at this Time (${percentage.toFixed(0)}% Match)</h2>
+                <p>The client may not be ready for an MMM project. Consider the following alternatives:</p>
+                <h3>Alternative Solutions:</h3>
+                <ul>
+                    <li><strong>For tactical/creative optimization goals:</strong> Propose A/B Testing or Attribution Modeling.</li>
+                    <li><strong>If data is insufficient or of low quality:</strong> Propose a Data Readiness Assessment or a smaller-scale Scenario Forecasting project.</li>
+                    <li><strong>For forward-looking goals without historical data:</strong> Propose Scenario Forecasting.</li>
+                </ul>
+            `;
+        }
+
+        resultDiv.innerHTML = content;
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    renderQuestions();
+    submitBtn.addEventListener('click', calculateResults);
+});

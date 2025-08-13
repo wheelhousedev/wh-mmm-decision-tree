@@ -9,23 +9,23 @@ document.addEventListener('DOMContentLoaded', () => {
             questions: [
                 {
                     text: "What is the client's primary business objective?",
-                    goodFit: "The client wants to understand the ROI of their marketing channels, optimize budget allocation, identify diminishing returns, and forecast the impact of future marketing investments.",
-                    poorFit: "The client wants to know which specific ad creative is performing best, understand real-time campaign performance, or attribute individual conversions to specific touchpoints."
+                    answer1: "The client wants to understand the ROI of their marketing channels, optimize budget allocation, identify diminishing returns, and forecast the impact of future marketing investments.",
+                    answer2: "The client wants to know which specific ad creative is performing best, understand real-time campaign performance, or attribute individual conversions to specific touchpoints."
                 },
                 {
                     text: "What is the primary purpose of the measurement?",
-                    goodFit: "The client needs to justify marketing spend to leadership and is looking for ways to optimize for better performance.",
-                    poorFit: "The client primarily needs to report on marketing activities and basic performance metrics."
+                    answer1: "The client needs to justify marketing spend to leadership and is looking for ways to optimize for better performance.",
+                    answer2: "The client primarily needs to report on marketing activities and basic performance metrics."
                 },
                 {
                     text: "What is the client's planning horizon?",
-                    goodFit: "The client is focused on annual or multi-year strategic planning and wants to understand the sustainable drivers of growth.",
-                    poorFit: "The client needs to make rapid, in-flight adjustments to campaigns on a daily or weekly basis."
+                    answer1: "The client is focused on annual or multi-year strategic planning and wants to understand the sustainable drivers of growth.",
+                    answer2: "The client needs to make rapid, in-flight adjustments to campaigns on a daily or weekly basis."
                 },
                 {
                     text: "Is the client interested in understanding cross-channel effects?",
-                    goodFit: "The client wants to understand how different marketing channels interact with each other (e.g., how TV ads impact search queries).",
-                    poorFit: "The client is only interested in the performance of individual channels in isolation."
+                    answer1: "The client wants to understand how different marketing channels interact with each other (e.g., how TV ads impact search queries).",
+                    answer2: "The client is only interested in the performance of individual channels in isolation."
                 }
             ]
         },
@@ -34,23 +34,23 @@ document.addEventListener('DOMContentLoaded', () => {
             questions: [
                 {
                     text: "How much historical data can the client provide?",
-                    goodFit: "The client can provide at least 2 years of continuous weekly data for all significant marketing channels and conversion metrics.",
-                    poorFit: "The client has less than 2 years of data, the data is not granular (e.g., monthly instead of weekly), or there are significant gaps."
+                    answer1: "The client can provide at least 2 years of continuous weekly data for all significant marketing channels and conversion metrics.",
+                    answer2: "The client has less than 2 years of data, the data is not granular (e.g., monthly instead of weekly), or there are significant gaps."
                 },
                 {
                     text: "How many distinct marketing channels are being used?",
-                    goodFit: "The client has a diverse marketing mix with several channels (e.g., TV, Radio, Social Media, Search) that have variable spending patterns.",
-                    poorFit: "The client relies on only one or two marketing channels, or the spending has been constant with little variation."
+                    answer1: "The client has a diverse marketing mix with several channels (e.g., TV, Radio, Social Media, Search) that have variable spending patterns.",
+                    answer2: "The client relies on only one or two marketing channels, or the spending has been constant with little variation."
                 },
                 {
                     text: "What kind of data can the client provide?",
-                    goodFit: "The client can provide granular data on marketing spend, impressions, clicks, and conversions, along with relevant external factors (e.g., promotions, economic data, competitor activity). The data is clean, consistent, and well-organized.",
-                    poorFit: "The client can only provide high-level data (e.g., total marketing spend), or the data is inconsistent, messy, or missing key variables."
+                    answer1: "The client can provide granular data on marketing spend, impressions, clicks, and conversions, along with relevant external factors (e.g., promotions, economic data, competitor activity). The data is clean, consistent, and well-organized.",
+                    answer2: "The client can only provide high-level data (e.g., total marketing spend), or the data is inconsistent, messy, or missing key variables."
                 },
                 {
                     text: "Is third-party or external data available?",
-                    goodFit: "The client can provide or is willing to acquire data on external factors like competitor spending, economic indicators, promotions, or major events.",
-                    poorFit: "The client only has access to their own internal marketing and sales data."
+                    answer1: "The client can provide or is willing to acquire data on external factors like competitor spending, economic indicators, promotions, or major events.",
+                    answer2: "The client only has access to their own internal marketing and sales data."
                 }
             ]
         }
@@ -62,16 +62,23 @@ document.addEventListener('DOMContentLoaded', () => {
             questionHTML += `<div class="question-group"><h2>${group.group}</h2>`;
             group.questions.forEach((q, questionIndex) => {
                 const questionId = `q${groupIndex}_${questionIndex}`;
+                
+                const isFlipped = Math.random() < 0.5;
+                const firstAnswer = isFlipped ? q.answer2 : q.answer1;
+                const secondAnswer = isFlipped ? q.answer1 : q.answer2;
+                const firstValue = isFlipped ? 0 : 1;
+                const secondValue = isFlipped ? 1 : 0;
+
                 questionHTML += `
                     <div>
                         <h3>${q.text}</h3>
                         <label>
-                            <input type="radio" name="${questionId}" value="1" required>
-                            <strong>Good Fit:</strong> ${q.goodFit}
+                            <input type="radio" name="${questionId}" value="${firstValue}" required>
+                            ${firstAnswer}
                         </label>
                         <label>
-                            <input type="radio" name="${questionId}" value="0">
-                            <strong>Poor Fit:</strong> ${q.poorFit}
+                            <input type="radio" name="${questionId}" value="${secondValue}">
+                            ${secondAnswer}
                         </label>
                     </div>
                 `;

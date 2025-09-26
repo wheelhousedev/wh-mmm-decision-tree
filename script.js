@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const questions = [
         {
-            group: "Client Goals & Objectives",
+            group: "Goals & Objectives",
             questions: [
                 {
                     text: "What is the client's primary business objective?",

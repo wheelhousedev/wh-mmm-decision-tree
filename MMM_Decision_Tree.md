@@ -8,39 +8,39 @@ This document serves as a checklist to help determine if a client is a good fit 
 
 ### Client Goals & Objectives
 
-**1. What is the client's primary business objective?**
-*   **Good Fit:** The client wants to understand the ROI of their marketing channels, optimize budget allocation, identify diminishing returns, and forecast the impact of future marketing investments.
-*   **Poor Fit:** The client wants to know which specific ad creative is performing best, understand real-time campaign performance, or attribute individual conversions to specific touchpoints.
+**1. What is the your organization's primary business objective?**
+*   **Good Fit:** We want to understand the ROI of their marketing channels, optimize budget allocation, identify diminishing returns, and forecast the impact of future marketing investments.
+*   **Poor Fit:** We want to know which specific ad creative is performing best, understand real-time campaign performance, or attribute individual conversions to specific touchpoints.
 
 **2. What is the primary purpose of the measurement?**
-*   **Good Fit:** The client needs to justify marketing spend to leadership and is looking for ways to optimize for better performance.
-*   **Poor Fit:** The client primarily needs to report on marketing activities and basic performance metrics.
+*   **Good Fit:** We need to justify marketing spend to leadership and is looking for ways to optimize for better performance.
+*   **Poor Fit:** We primarily need to report on marketing activities and basic performance metrics.
 
-**3. What is the client's planning horizon?**
-*   **Good Fit:** The client is focused on annual or multi-year strategic planning and wants to understand the sustainable drivers of growth.
-*   **Poor Fit:** The client needs to make rapid, in-flight adjustments to campaigns on a daily or weekly basis.
+**3. What is your planning horizon?**
+*   **Good Fit:** We are focused on annual or multi-year strategic planning and wants to understand the sustainable drivers of growth.
+*   **Poor Fit:** We are need to make rapid, in-flight adjustments to campaigns on a daily or weekly basis.
 
-**4. Is the client interested in understanding cross-channel effects?**
-*   **Good Fit:** The client wants to understand how different marketing channels interact with each other (e.g., how TV ads impact search queries).
-*   **Poor Fit:** The client is only interested in the performance of individual channels in isolation.
+**4. Is your organization interested in understanding cross-channel effects?**
+*   **Good Fit:** We want to understand how different marketing channels interact with each other (e.g., how TV ads impact search queries).
+*   **Poor Fit:** We are only interested in the performance of individual channels in isolation.
 
 ### Data & Analytics Readiness
 
 **5. How much historical data can the client provide?**
-*   **Good Fit:** The client can provide at least 2 years of continuous weekly data for all significant marketing channels and conversion metrics.
-*   **Poor Fit:** The client has less than 2 years of data, the data is not granular (e.g., monthly instead of weekly), or there are significant gaps.
+*   **Good Fit:** We can provide at least 2 years of continuous weekly data for all significant marketing channels and conversion metrics.
+*   **Poor Fit:** We have less than 2 years of data, the data is not granular (e.g., monthly instead of weekly), or there are significant gaps.
 
 **6. How many distinct marketing channels are being used?**
-*   **Good Fit:** The client has a diverse marketing mix with several channels (e.g., TV, Radio, Social Media, Search) that have variable spending patterns.
-*   **Poor Fit:** The client relies on only one or two marketing channels, or the spending has been constant with little variation.
+*   **Good Fit:** We have a diverse marketing mix with several channels (e.g., TV, Radio, Social Media, Search) that have variable spending patterns.
+*   **Poor Fit:** We rely on only one or two marketing channels, or the spending has been constant with little variation.
 
-**7. What kind of data can the client provide?**
-*   **Good Fit:** The client can provide granular data on marketing spend, impressions, clicks, and conversions, along with relevant external factors (e.g., promotions, economic data, competitor activity). The data is clean, consistent, and well-organized.
-*   **Poor Fit:** The client can only provide high-level data (e.g., total marketing spend), or the data is inconsistent, messy, or missing key variables.
+**7. What kind of data can the your organization provide?**
+*   **Good Fit:** We can provide granular data on marketing spend, impressions, clicks, and conversions, along with relevant external factors (e.g., promotions, economic data, competitor activity). The data is clean, consistent, and well-organized.
+*   **Poor Fit:** We can only provide high-level data (e.g., total marketing spend), or the data is inconsistent, messy, or missing key variables.
 
 **8. Is third-party or external data available?**
-*   **Good Fit:** The client can provide or is willing to acquire data on external factors like competitor spending, economic indicators, promotions, or major events.
-*   **Poor Fit:** The client only has access to their own internal marketing and sales data.
+*   **Good Fit:** We can provide or is willing to acquire data on external factors like competitor spending, economic indicators, promotions, or major events.
+*   **Poor Fit:** We only have access to their own internal marketing and sales data.
 
 ---
 

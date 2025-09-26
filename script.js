@@ -119,9 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>Your organization is likely a good fit for an MMM project.</p>
                 <h3>Next Steps:</h3>
                 <ul>
-                    <li>Proceed with a deeper dive into the data requirements for Meridian.</li>
+                    <li>Proceed with a deeper dive into the data requirements for MMM.</li>
                     <li>Scope the MMM project, outlining timelines, deliverables, and costs.</li>
-                    <li>Begin the data collection and integration process.</li>
                     <li>Begin the data collection and integration process.</li>
                 </ul>
                 Have questions about your results? Reach out to us and we'll chat!<br><br>

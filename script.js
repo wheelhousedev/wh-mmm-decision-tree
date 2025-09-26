@@ -122,7 +122,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Proceed with a deeper dive into the data requirements for Meridian.</li>
                     <li>Scope the MMM project, outlining timelines, deliverables, and costs.</li>
                     <li>Begin the data collection and integration process.</li>
+                    <li>Begin the data collection and integration process.</li>
                 </ul>
+                Have questions about your results? Reach out to us and we'll chat!<br><br>
+                <a href="https://www.wheelhousedmg.com/contact/" class="button contact-button">Contact Us</a>
             `;
         } else {
             resultDiv.classList.add('result-bad');
@@ -135,6 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><strong>If data is insufficient or of low quality:</strong> Propose a Data Readiness Assessment or a smaller-scale Scenario Forecasting project.</li>
                     <li><strong>For forward-looking goals without historical data:</strong> Propose Scenario Forecasting.</li>
                 </ul>
+                Have questions about your results? Reach out to us and we'll chat!<br><br>
+                <a href="https://www.wheelhousedmg.com/contact/" class="button contact-button">Contact Us</a>
             `;
         }
 

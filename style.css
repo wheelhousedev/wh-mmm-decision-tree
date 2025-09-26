@@ -1,7 +1,23 @@
+:root {
+  --color-primary: #003d31;
+  --color-secondary: #c0d8d7;
+  --color-accent: #fed448;
+  --color-dark: #071e16;
+  --color-light: #f9f9f9;
+  --color-white: #ffffff;
+  --color-gray-light: #d9d9d9;
+  --color-gray-medium: #8c8ca1;
+
+  --border-radius-sm: 20px;
+  --border-radius-lg: 30px;
+
+  --font-family: 'Outfit', sans-serif;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f4f7f9;
-    color: #333;
+    font-family: var(--font-family);
+    background-color: var(--color-light);
+    color: var(--color-dark);
     line-height: 1.6;
     margin: 0;
     padding: 20px;
@@ -10,14 +26,14 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background: #fff;
+    background: var(--color-white);
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2), 5px 5px 10px rgba(0,0,0,0.19);
 }
 
 h1 {
-    color: #2c3e50;
+    color: var(--color-primary);
     text-align: center;
     margin-bottom: 20px;
 }
@@ -25,9 +41,9 @@ h1 {
 .question-group {
     margin-bottom: 25px;
     padding: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    background-color: #fafafa;
+    border: 1px solid var(--color-gray-light);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--color-light);
 }
 
 .question-group h3 {
@@ -45,7 +61,7 @@ h1 {
 }
 
 .question-group label:hover {
-    background-color: #ecf0f1;
+    background-color: var(--color-secondary);
 }
 
 .question-group input[type="radio"] {
@@ -58,16 +74,17 @@ h1 {
     padding: 15px;
     font-size: 18px;
     font-weight: bold;
-    color: #fff;
-    background-color: #003d31;
+    color: var(--color-light);
+    background-color: var(--color-primary);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius-sm);
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 #submit-btn:hover {
-    background-color: #2980b9;
+    background-color: var(--color-accent);
+    color: var(--color-dark);
 }
 
 .result-container {
@@ -78,15 +95,15 @@ h1 {
 }
 
 .result-good {
-    background-color: #e8f5e9;
-    border: 1px solid #a5d6a7;
-    color: #2e7d32;
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+    color: var(--color-primary);
 }
 
 .result-bad {
-    background-color: #ffebee;
-    border: 1px solid #ef9a9a;
-    color: #c62828;
+    background-color: var(--color-gray-light);
+    border: 1px solid var(--color-gray-light);
+    color: var(--color-dark);
 }
 
 .result-container h2 {
@@ -95,4 +112,29 @@ h1 {
 
 .result-container ul {
     padding-left: 20px;
+}
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-light);
+    background-color: var(--color-accent);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.contact-button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--color-dark);
+}
+
+.button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-light);
 }
